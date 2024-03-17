@@ -1,5 +1,20 @@
 var audio = new Audio('./scripts/muse.mp3');
 
+// if the width of the window is less than 600px
+if(window.innerWidth < 800){
+
+    let instructions = document.getElementById("instructions");
+    instructions.innerHTML = `<p>Sorry, this game is not supported on mobile devices.</p>`;
+    instructions.innerHTML += `<p>Please play on a desktop or laptop.</p>`;
+    instructions.style.display = "block";
+    document.getElementById("playarea").style.display = "none";
+    document.getElementById("scorearea").style.display = "none";
+    document.getElementById("endgamearea").style.display = "none";
+    document.getElementById("contentarea").style.display = "none";
+    document.getElementById("leaderboard").style.display = "none";
+
+}
+
 const levelInfo = {
     "1":{
         'transition': 2,
