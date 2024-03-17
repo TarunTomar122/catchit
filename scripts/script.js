@@ -67,7 +67,31 @@ const levelInfo = {
     "13":{
         'transition': 0.0001,
         'timer': 10,
-    }
+    },
+    "14":{
+        'transition': 0.00005,
+        'timer': 10,
+    },
+    "15":{
+        'transition': 0.00001,
+        'timer': 10,
+    },
+    "16":{
+        'transition': 0.000005,
+        'timer': 5,
+    },
+    "17":{
+        'transition': 0.000001,
+        'timer': 5,
+    },
+    "18":{
+        'transition': 0.0000005,
+        'timer': 5,
+    },
+    "19":{
+        'transition': 0.0000001,
+        'timer': 5,
+    },
 }
 
 function fillSlider(seconds) {
