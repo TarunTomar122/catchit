@@ -108,10 +108,10 @@ const startGame = () => {
 	document.getElementById("scorearea").style.display = "block";
 	document.getElementById("endgamearea").style.display = "none";
 
-    if(localStorage.getItem("level") !== null){
-        level = localStorage.getItem("level");
+    if(localStorage.getItem("catchitLevel") !== null){
+        level = localStorage.getItem("catchitLevel");
     }else{
-        localStorage.setItem("level", level);
+        localStorage.setItem("catchitLevel", level);
     }
 
     document.getElementById("scorearea").innerText = "Level: " + level;
@@ -197,14 +197,14 @@ function setupLevel(level){
 
             window.saveScore(name, level).then(() => {
                 instructions.innerHTML = `<p>Nice try! You messed up on level ${level}!</>`;
-                instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/tradeoff">leaderboard</a>!</p>`;
+                instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/catchit">leaderboard</a>!</p>`;
                 instructions.innerHTML += `<button onclick="startGame()">Play Again</button>`;
     
             });
         }
 
-        if(localStorage.getItem("level") == undefined ||  level > parseInt(localStorage.getItem("level"))){	
-            localStorage.setItem("level", level);
+        if(localStorage.getItem("catchitLevel") == undefined ||  level > parseInt(localStorage.getItem("catchitLevel"))){	
+            localStorage.setItem("catchitLevel", level);
         }
 
         // add a button to play again
@@ -223,9 +223,9 @@ const submitScore = () => {
 	// show a loading message
 	instructions.innerHTML = `<p>Submitting...</p>`;
 
-	window.saveScore(name, localStorage.getItem('level')).then(() => {
+	window.saveScore(name, localStorage.getItem('catchitLevel')).then(() => {
 		
-		instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/tradeoff">leaderboard</a>!</p>`;
+		instructions.innerHTML += `<p>You are ranked <span style="color: #ffc400">${window.rank}</span> on the <a href="/catchit">leaderboard</a>!</p>`;
 		instructions.innerHTML += `<button onclick="startGame()">Play Again</button>`;
 
 	});
